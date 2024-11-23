@@ -1,0 +1,6 @@
+runtime: python312
+
+entrypoint: uvicorn main:app --host 0.0.0.0 --port 8080
+
+env_variables:
+  OLLAMA_SERVER_URL: "https://ollamaapi-ollama-494205248522.us-central1.run.app"  # Hosted Ollama server
