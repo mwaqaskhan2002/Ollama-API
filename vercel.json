@@ -8,9 +8,12 @@
     ],
     "routes": [
       {
-        "src": "/ask",
-        "dest": "/main.py"
+        "src": "/(.*)",
+        "dest": "main.py"
       }
-    ]
+    ],
+    "env": {
+      "OLLAMA_SERVER_URL": "https://ollamaapi-ollama-494205248522.us-central1.run.app/"
+    }
   }
   
