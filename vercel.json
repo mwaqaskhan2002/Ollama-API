@@ -5,6 +5,12 @@
         "src": "main.py",
         "use": "@vercel/python"
       }
+    ],
+    "routes": [
+      {
+        "src": "/ask",
+        "dest": "/main.py"
+      }
     ]
   }
   

@@ -67,14 +67,13 @@ def ask(prompt: str):
         # Return only the response content without verbose metadata
         response_json = res.json()
         if "response" in response_json:
-            return {"response":"llama3.2" , "response": response_json["response"]}
+            return {"response": response_json["response"]}  # Return the response correctly
         else:
             raise HTTPException(status_code=500, detail="Malformed response from Ollama")
     except requests.RequestException as e:
         logging.error(f"Error during prompt generation: {e}")
         raise HTTPException(status_code=500, detail=f"Error during prompt generation: {e}")
 
-
+import uvicorn
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8080, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=True)
